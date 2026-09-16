@@ -28,9 +28,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # installed packages
+    # Installed packages
     'django_cleanup.apps.CleanupConfig',
     'django_social_share',
+
+    # My apps
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
