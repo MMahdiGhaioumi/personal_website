@@ -34,6 +34,7 @@ INSTALLED_APPS = [
 
     # My apps
     'account.apps.AccountConfig',
+    'home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
