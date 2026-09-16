@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # installed packages
-    'django.cleanup.apps.CleanupConfig',
+    'django_cleanup.apps.CleanupConfig',
     'django_social_share',
 ]
 
