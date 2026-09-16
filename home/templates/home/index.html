@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Laralink">
+    <!-- Page Title -->
+    <title>Davis - Personal Portfolio</title>
+    <!-- Favicon Icon -->
+    <link rel="icon" href="{% static 'assets/img/favicon.png' %}"/>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/lightgallery.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}"/>
+</head>
+
+<body id="home" class="st-get-sidebar" lang="fa" dir="rtl">
+<!-- Start Header Section -->
+<header class="st-site-header st-style2 st-sticky-header">
+    <div class="st-main-header">
+        <div class="container">
+            <div class="st-main-header-in">
+                <div class="st-main-header-left">
+                    <div class="st-header-author"><img
+                            src="{% if my_user.image %} {{ my_user.image.url }} {% else %} {% static 'assets/img/profile.jpg' %} {% endif %}"
+                            alt="تصویر شخصی من">
+                    </div>
+                </div>
+                <div class="st-main-header-right">
+                    <div class="st-nav">
+                        <ul class="st-nav-list st-onepage-nav">
+                            <li><a href="#home" class="st-smooth-move">خانه</a></li>
+                            <li><a href="#about" class="st-smooth-move">درباره</a></li>
+                            <li><a href="#resume" class="st-smooth-move">رزومه</a></li>
+                            <li><a href="#blog" class="st-smooth-move">مقاله ها</a></li>
+                            <li><a href="#contact" class="st-smooth-move">تماس با من</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- End Header Section -->
+
+<!-- Start Hero Seciton -->
+<section class="st-hero st-style2">
+    <div class="container">
+        <div class="st-hero-text">
+            <h1>سلام من <span>{{ my_user.get_full_name }}</span> هستم</h1>
+            <p>{{ my_user.short_information }}</p>
+            <div class="st-hero-social-links">
+                {% for s_media in my_user.social_medias.all %}
+                    <a href="{{ s_media.link }}" class="st-social-btn">
+                        <i class="fab fa-{{ s_media.name }}"></i>
+                    </a>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <div id="background-wrap">
+        <div class="bubble x1"></div>
+        <div class="bubble x2"></div>
+        <div class="bubble x3"></div>
+        <div class="bubble x4"></div>
+        <div class="bubble x5"></div>
+        <div class="bubble x6"></div>
+        <div class="bubble x7"></div>
+        <div class="bubble x8"></div>
+        <div class="bubble x9"></div>
+        <div class="bubble x10"></div>
+    </div>
+    <div id="particles-js"></div>
+</section>
+<!-- End Hero Seciton -->
+
+<!-- Start About Seciton -->
+{% include 'home/includes/about.html' %}
+<!-- End About Seciton -->
+
+<!-- Start Service Seciton -->
+{% include 'home/includes/services.html' %}
+<!-- End Service Seciton -->
+
+<!-- Start Skill Seciton -->
+{% include 'home/includes/skills.html' %}
+<!-- End Skill Seciton -->
+
+<!-- Start Resume Seciton -->
+{% include 'home/includes/resume.html' %}
+<!-- End Resume Seciton -->
+
+<!-- Start Blog Seciton -->
+{% include 'home/includes/blog.html' %}
+<!-- End Blog Seciton -->
+
+<!-- Start Contact Seciton -->
+{% include 'home/includes/contact.html' %}
+<!-- End Contact Seciton -->
+
+<!-- Start Footer Seciton -->
+<footer>
+    <div class="container">
+        <div class="st-copyright-wrap text-center">
+            <div class="st-copyright-text">© 2026. Made with ❤️ in Iran.</div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer Seciton -->
+
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.slick.min.js' %}"></script>
+<script src="{% static 'assets/js/lightgallery.min.js' %}"></script>
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<script src="{% static 'assets/js/particles.min.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+</html>

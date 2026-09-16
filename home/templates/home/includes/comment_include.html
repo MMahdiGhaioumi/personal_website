@@ -1,0 +1,41 @@
+{% load static %}
+{% load jalali %}
+<li class="comment">
+
+    <!--- parent -->
+    <div class="comment-body">
+        <div class="comment-meta">
+            <div class="comment-author">
+                <img src="{% static 'assets/img/profile.jpg' %}" alt="comment1"
+                     class="avatar">
+                <a class="nm">{{ comment.name }}</a>
+            </div><!-- .comment-author -->
+            <div class="comment-metadata">
+                <a><span>{{ comment.created_at | jalali_date }}</span></a>
+            </div><!-- .comment-metadata -->
+        </div><!-- .comment-meta -->
+        <div class="comment-content">
+            <p>{{ comment.body }}</p>
+        </div>
+        {% if level < 3 %}
+            <button type="button" class="reply-button" data-comment-id="{{ comment.id }}" data-comment-name="{{ comment.name }}">
+            پاسخ به این دیدگاه
+            </button>
+        {% endif %}
+    </div>
+
+    <!-- .children -->
+    {% if level < 3 %}
+        {% with comment.replies.all as replies %}
+            {% if replies %}
+                <ol class="children">
+                    {% for reply in replies %}
+                    	{% include 'home/includes/comment_include.html' with comment=reply level=level|add:1 %}
+                    {% endfor %}
+
+                </ol>
+            {% endif %}
+        {% endwith %}
+    {% endif %}
+
+</li>

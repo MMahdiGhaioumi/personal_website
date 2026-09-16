@@ -1,0 +1,51 @@
+{% load static %}
+{% load jalali %}
+<section id="about" class="st-about-wrap">
+    <div class="st-height-b100 st-height-lg-b80"></div>
+    <div class="container">
+        <div class="st-section-heading st-style1">
+            <h4 class="st-section-heading-title">درباره من</h4>
+            <h2 class="st-section-heading-subtitle">درباره من</h2>
+        </div>
+        <div class="st-height-b25 st-height-lg-b25"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 wow fadeInLeft">
+                <div class="st-about-img-wrap">
+                    <div class="st-about-img st-dynamic-bg st-bg"
+                         data-src="{% if my_user.image %} {{ my_user.image.url }} {% else %} {% static 'assets/img/profile.jpg' %} {% endif %}"
+                         alt="تصویر شخصی من">>
+                    </div>
+                </div>
+                <div class="st-height-b0 st-height-lg-b30"></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="st-vertical-middle">
+                    <div class="st-vertical-middle-in">
+                        <div class="st-text-block st-style1">
+                            <h2 class="st-text-block-title">درود من {{ my_user.get_full_name }} هستم</h2>
+                            <h4 class="st-text-block-subtitle">Backend developer</h4>
+                            <div class="st-text-block-text">
+                                <p>{{ my_user.information }}</p>
+                            </div>
+                            <ul class="st-text-block-details st-mp0">
+                                <li><span>تاریخ تولد</span> : <span>{{ my_user.birth_date | jalali_date }}</span></li>
+                                <li><span>شماره همراه</span> : <span>{{ my_user.phones.first.phone }}</span></li>
+                                <li><span>ایمیل</span> : <span>{{ my_user.emails.first.email }}</span></li>
+                                <li><span>از</span> : <span>{{ my_user.country }} {{ my_user.city }}</span></li>
+                            </ul>
+
+                            {% if my_user.resume %}
+                                <div class="st-text-block-btn">
+                                    <a href="{{ my_user.resume.url}}" class="st-btn st-style1 st-color1" download="resume.mp4">Download
+                                        CV</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

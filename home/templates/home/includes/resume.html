@@ -1,0 +1,71 @@
+{% load static %}
+{% load jalali %}
+<section id="resume" class="st-dark-bg">
+    <div class="st-height-b100 st-height-lg-b80"></div>
+    <div class="container">
+        <div class="st-section-heading st-style1">
+            <h4 class="st-section-heading-title">RESUME</h4>
+            <h2 class="st-section-heading-subtitle">RESUME</h2>
+        </div>
+        <div class="st-height-b25 st-height-lg-b25"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- Experience -->
+            <div class="col-lg-6">
+                <div class="st-resume-wrap">
+                    <div class="st-resume-heading">
+                        <img src="{% static 'assets/img/icon/resume-icon1.png' %}" alt="resume-icon">
+                        <h2 class="st-resume-heading-title">تجربه کاری</h2>
+                    </div>
+
+                    <div class="st-height-b50 st-height-lg-b30"></div>
+
+                    <div class="st-resume-timeline-wrap">
+                        {% for exp in resume_experience %}
+                            <div class="st-resume-timeline">
+                                <h3 class="st-resume-timeline-title">{{ exp.title }}</h3>
+                                <div class="st-resume-timeline-duration">{{ exp.start_date|jalali_date }}
+                                    --- {{ exp.end_date|jalali_date|default:"هم اکنون" }}</div>
+                                <h4 class="st-resume-timeline-subtitle">{{ exp.place_name }}</h4>
+                                <div class="st-resume-timeline-text">
+                                    <p>{{ exp.description }}</p>
+                                </div>
+                            </div> <!-- st-resume-timeline -->
+                            <div class="st-height-b50 st-height-lg-b30"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="col-lg-6">
+
+                <div class="st-height-b0 st-height-lg-b50"></div>
+                <div class="st-resume-wrap">
+                    <div class="st-resume-heading">
+                        <img src="{% static 'assets/img/icon/resume-icon2.png' %}" alt="resume-icon">
+                        <h2 class="st-resume-heading-title">تحصیل و آموزش</h2>
+                    </div>
+                    <div class="st-height-b50 st-height-lg-b30"></div>
+
+                    <div class="st-resume-timeline-wrap">
+                        {% for edu in resume_education %}
+                            <div class="st-resume-timeline">
+                                <h3 class="st-resume-timeline-title">{{ edu.title }}</h3>
+                                <div class="st-resume-timeline-duration">{{ edu.start_date|jalali_date }}
+                                    --- {{ edu.end_date|jalali_date|default:"present" }}</div>
+                                <h4 class="st-resume-timeline-subtitle">{{ edu.place_name }}</h4>
+                                <div class="st-resume-timeline-text">
+                                    <p>{{ edu.description }}</p>
+                                </div>
+                            </div> <!-- st-resume-timeline -->
+                            <div class="st-height-b50 st-height-lg-b30"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="st-height-b100 st-height-lg-b80"></div>
+</section>

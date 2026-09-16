@@ -1,0 +1,34 @@
+{% load static %}
+<section>
+    <div class="st-height-b100 st-height-lg-b80"></div>
+    <div class="container">
+        <div class="st-section-heading st-style1">
+            <h4 class="st-section-heading-title">خدمات</h4>
+            <h2 class="st-section-heading-subtitle">خدمات</h2>
+        </div>
+        <div class="st-height-b25 st-height-lg-b25"></div>
+    </div>
+
+    <!-- Iconbox Container -->
+
+    <div class="container">
+        <div class="row">
+            {% for service in services %}
+            	<div class="col-lg-4 col-md-6">
+                <div class="st-iconbox st-style1">
+                    <div class="st-iconbox-icon">
+                        <img src="{{ service.icon.url }}" alt="logo">
+                    </div>
+                    <h2 class="st-iconbox-title">{{ service.title }}</h2>
+                    <div class="st-iconbox-text">{{ service.body }}</div>
+                </div>
+                <div class="st-height-b30 st-height-lg-b30"></div>
+            </div><!-- .col -->
+            {% empty %}
+            	<p class="text-center text-primary">در حال حاضر هیچ خدماتی داده نمی شود.</p>
+            {% endfor %}
+
+        </div>
+    </div>
+    <div class="st-height-b100 st-height-lg-b80"></div>
+</section>

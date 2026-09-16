@@ -1,0 +1,51 @@
+{% load static %}
+{% load jalali %}
+<section id="blog">
+    <div class="st-height-b100 st-height-lg-b80"></div>
+    <div class="container">
+        <div class="st-section-heading st-style1">
+            <h4 class="st-section-heading-title">مقاله</h4>
+            <h2 class="st-section-heading-subtitle">آخرین مقاله ها</h2>
+        </div>
+        <div class="st-height-b25 st-height-lg-b25"></div>
+    </div>
+
+    <!-- Latest News Container -->
+
+    <div class="container">
+        <div class="st-slider st-style2">
+            <div class="slick-container" data-autoplay="0" data-loop="1" data-speed="600" data-center="0"
+                 data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="2" data-md-slides="3"
+                 data-lg-slides="3" data-add-slides="3">
+                <div class="slick-wrapper">
+                    <div class="slick-slide-in">
+                        {% for post in my_user.posts.all %}
+                            {% with post.get_absolute_url as post_url %}
+                            <div class="st-post-single st-style1">
+                                <a href="{{ post_url }}" class="st-post-thumb st-zoom">
+                                    <img src="{{ post.image.url }}" width="370px" height="221px" class="st-zoom-in" alt="blog{{ forloop.counter }}">
+                                </a>
+                                <div class="st-post-info">
+                                    <div class="st-post-date">
+                                        By:
+                                        <a class="st-post-author">{{ post.user.get_full_name }}</a>
+                                        <span class="st-post-date-divider">|</span>
+                                        <span class="st-post-publish-date">{{ post.created_at | jalali_date }}</span>
+                                    </div>
+                                    <h4 class="st-post-title"><a href="{{ post_url }}">{{ post.title }}</a></h4>
+                                </div>
+                            </div>
+                            {% endwith %}
+                        {% empty %}
+                            <div class="slick-slide"><p class="text-primary">هیچ مقاله ای وجود ندارد.</p></div>
+                        {% endfor %}
+
+                    </div><!-- .slick-slide-in -->
+                </div>
+            </div><!-- .slick-container -->
+            <div class="pagination st-style1 st-flex st-hidden"></div>
+            <!-- If dont need Pagination then add class .st-hidden -->
+        </div><!-- .st-slider -->
+    </div>
+    <div class="st-height-b95 st-height-lg-b75"></div>
+</section>
