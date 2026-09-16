@@ -98,3 +98,6 @@ class UserAdmin(UserAdmin):
 
 
 admin.site.unregister(Group)
+admin.site.site_header = "مدیریت سایت شخصی"
+admin.site.index_title = "مدیریت سایت"
+admin.site.site_title = "مدیریت سایت"
