@@ -139,3 +139,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Session settings
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# auth user
+AUTH_USER_MODEL = 'account.User'
