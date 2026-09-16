@@ -44,7 +44,7 @@ class Resume(models.Model):
     place = models.CharField(verbose_name="انتخاب حالت", choices=Place, max_length=50)
     title = models.CharField(verbose_name="عنوان", max_length=128)
     place_name = models.CharField(verbose_name="نام", max_length=128)
-    description = models.TextField(verbose_name="توضیحات", unique=True)
+    description = models.TextField(verbose_name="توضیحات")
     start_date = models.DateField(verbose_name="تاریخ شروع", blank=True, null=True)
     end_date = models.DateField(verbose_name="تاریخ پایان", blank=True, null=True)
 
