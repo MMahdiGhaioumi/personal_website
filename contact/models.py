@@ -48,7 +48,7 @@ class Email(models.Model):
 
 class Address(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name="کاربر", related_name="addresses")
-    address = models.TextField(unique=True, verbose_name="نشانی")
+    address = models.TextField(verbose_name="نشانی")
 
     def __str__(self):
         return f"{self.user} -- {self.address}"
