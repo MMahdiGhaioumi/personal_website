@@ -1,11 +1,11 @@
 from django.contrib import admin
 from django.utils.html import format_html
-
+from unfold import admin as unfold_admin
 from . import models
 
 
 @admin.register(models.Service)
-class ServiceAdmin(admin.ModelAdmin):
+class ServiceAdmin(unfold_admin.ModelAdmin):
     list_display = ('__str__', 'show_image')
 
     @admin.display(description="نگاره سروس")
@@ -15,7 +15,7 @@ class ServiceAdmin(admin.ModelAdmin):
 
 
 @admin.register(models.Resume)
-class ResumeAdmin(admin.ModelAdmin):
+class ResumeAdmin(unfold_admin.ModelAdmin):
     radio_fields = {'place': admin.HORIZONTAL}
 
 
