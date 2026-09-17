@@ -55,7 +55,7 @@
     <div class="container">
         <div class="st-hero-text">
             <h1>سلام من <span>{{ my_user.get_full_name | default:'مهدی' }}</span> هستم 👋</h1>
-            <p>{{ my_user.short_information }}</p>
+            <p>{{ my_user.short_information|default:'' }}</p>
             <div class="st-hero-social-links">
                 {% for s_media in my_user.social_medias.all %}
                     <a href="{{ s_media.link }}" class="st-social-btn">
