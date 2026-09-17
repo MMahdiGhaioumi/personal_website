@@ -2,39 +2,35 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from . import forms
-
+from unfold.admin import ModelAdmin, TabularInline
 from contact import models
 
-
-class SocialMediaTabular(admin.TabularInline):
+class SocialMediaTabular(TabularInline):
     model = models.SocialMedia
     extra = 0
     classes = ["collapse"]
 
 
-class PhoneTabular(admin.TabularInline):
+class PhoneTabular(TabularInline):
     model = models.Phone
     extra = 0
     classes = ["collapse"]
 
 
-class AddressTabular(admin.TabularInline):
+class AddressTabular(TabularInline):
     model = models.Address
     extra = 0
     classes = ["collapse"]
 
 
-class EmailTabular(admin.TabularInline):
+class EmailTabular(TabularInline):
     model = models.Email
     extra = 0
     classes = ["collapse"]
 
 
 @admin.register(get_user_model())
-class UserAdmin(BaseUserAdmin):
-    form = forms.UserChangeForm
-    add_form = forms.UserCreationForm
+class UserAdmin(BaseUserAdmin, ModelAdmin):
 
     list_display = ['username', 'first_name', 'last_name']
     search_fields = ['username', 'user__emails']
