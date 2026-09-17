@@ -4,31 +4,31 @@ A personal website built with Django to present personal information, skills, se
 
 <p align="center">
   <a href="https://www.python.org/">
-    <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" alt="Python">
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=FFD43B" alt="Python">
   </a>
   <a href="https://www.djangoproject.com/">
-    <img src="https://img.shields.io/badge/Django-092E20?logo=django&logoColor=white" alt="Django">
+    <img src="https://img.shields.io/badge/Django-0C4B33?style=for-the-badge&logo=django&logoColor=FFFFFF" alt="Django">
   </a>
   <a href="https://www.mysql.com/">
-    <img src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white" alt="MySQL">
+    <img src="https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=FFFFFF" alt="MySQL">
   </a>
   <a href="https://docs.astral.sh/uv/">
-    <img src="https://img.shields.io/badge/uv-Package%20Manager-6E56CF?logo=uv&logoColor=white" alt="uv">
+    <img src="https://img.shields.io/badge/uv-6E56CF?style=for-the-badge&logo=uv&logoColor=FFFFFF" alt="uv">
   </a>
   <a href="https://github.com/unfoldadmin/django-unfold">
-    <img src="https://img.shields.io/badge/Django%20Unfold-Admin-1F2937" alt="Django Unfold">
+    <img src="https://img.shields.io/badge/Django%20Unfold-111827?style=for-the-badge&logo=django&logoColor=FFFFFF" alt="Django Unfold">
   </a>
   <a href="https://pypi.org/project/django-cleanup/">
-    <img src="https://img.shields.io/badge/django--cleanup-File%20Cleanup-0C4B33" alt="django-cleanup">
+    <img src="https://img.shields.io/badge/django--cleanup-16A34A?style=for-the-badge&logo=python&logoColor=FFFFFF" alt="django-cleanup">
   </a>
   <a href="https://pypi.org/project/django-social-share/">
-    <img src="https://img.shields.io/badge/django--social--share-Social%20Sharing-1DA1F2" alt="django-social-share">
+    <img src="https://img.shields.io/badge/django--social--share-E11D48?style=for-the-badge&logo=sharethis&logoColor=FFFFFF" alt="django-social-share">
   </a>
   <a href="https://pypi.org/project/django-unfold-rtl/">
-    <img src="https://img.shields.io/badge/django--unfold--rtl-RTL%20Support-7C3AED" alt="django-unfold-rtl">
+    <img src="https://img.shields.io/badge/django--unfold--rtl-8B5CF6?style=for-the-badge&logo=django&logoColor=FFFFFF" alt="django-unfold-rtl">
   </a>
   <a href="LICENSE">
-    <img src="https://img.shields.io/badge/License-LGPL%202.1-blue.svg" alt="License: LGPL 2.1">
+    <img src="https://img.shields.io/badge/License-LGPL%202.1-F59E0B?style=for-the-badge&logo=opensourceinitiative&logoColor=FFFFFF" alt="License: LGPL 2.1">
   </a>
 </p>
 
