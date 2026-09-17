@@ -1,15 +1,16 @@
 from django.contrib import admin
+from unfold import admin as unfold_admin
 from . import models
 
 
-class CommentAdminSack(admin.StackedInline):
+class CommentAdminSack(unfold_admin.TabularInline):
     model = models.Comment
     extra = 1
     classes = ['collapse']
 
 
 @admin.register(models.Post)
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(unfold_admin.ModelAdmin):
     list_display = ("title", "user")
     inlines = [CommentAdminSack]
     search_fields = ["title", "body", "user__username"]
@@ -19,7 +20,7 @@ class PostAdmin(admin.ModelAdmin):
 
 
 @admin.register(models.Comment)
-class CommentAdmin(admin.ModelAdmin):
+class CommentAdmin(unfold_admin.ModelAdmin):
     list_display = ('__str__', 'status')
     list_editable = ('status',)
     search_fields = ['name', 'email']
@@ -31,5 +32,5 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 @admin.register(models.Tag)
-class TagAdmin(admin.ModelAdmin):
+class TagAdmin(unfold_admin.ModelAdmin):
     search_fields = ['name']
