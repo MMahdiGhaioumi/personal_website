@@ -24,16 +24,16 @@
                 <div class="st-vertical-middle">
                     <div class="st-vertical-middle-in">
                         <div class="st-text-block st-style1">
-                            <h2 class="st-text-block-title">درود من {{ my_user.get_full_name }} هستم</h2>
+                            <h2 class="st-text-block-title">درود من {{ my_user.get_full_name|default:'مهدی' }} هستم</h2>
                             <h4 class="st-text-block-subtitle">Backend developer</h4>
                             <div class="st-text-block-text">
-                                <p>{{ my_user.information }}</p>
+                                <p>{% if my_user.information %} {{ my_user.information }} {% else %} {% lorem 2 p %} {% endif %}</p>
                             </div>
                             <ul class="st-text-block-details st-mp0">
-                                <li><span>تاریخ تولد</span> : <span>{{ my_user.birth_date | jalali_date }}</span></li>
-                                <li><span>شماره همراه</span> : <span>{{ my_user.phones.first.phone }}</span></li>
-                                <li><span>ایمیل</span> : <span>{{ my_user.emails.first.email }}</span></li>
-                                <li><span>از</span> : <span>{{ my_user.country }} {{ my_user.city }}</span></li>
+                                <li><span>تاریخ تولد</span> : <span>{% if my_user.birth_date %} {{ my_user.birth_date | jalali_date }} {% else %} {% now "Y-m-d" %} {% endif %}</span></li>
+                                <li><span>شماره همراه</span> : <span>{{ my_user.phones.first.phone|default:"0919932xxxx" }}</span></li>
+                                <li><span>ایمیل</span> : <span>{{ my_user.emails.first.email|default:"example@gmail.com" }}</span></li>
+                                <li><span>از</span> : <span>{{ my_user.country|default:"Iran" }} {{ my_user.city|default:"Tehran" }}</span></li>
                             </ul>
 
                             {% if my_user.resume %}

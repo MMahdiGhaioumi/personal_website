@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Laralink">
     <!-- Page Title -->
-    <title>Davis - Personal Portfolio</title>
+    <title>مهدی - سایت شخصی</title>
     <!-- Favicon Icon -->
     <link rel="icon" href="{% static 'assets/img/favicon.png' %}"/>
     <!-- Stylesheets -->
@@ -54,7 +54,7 @@
 <section class="st-hero st-style2">
     <div class="container">
         <div class="st-hero-text">
-            <h1>سلام من <span>{{ my_user.get_full_name }}</span> هستم</h1>
+            <h1>سلام من <span>{{ my_user.get_full_name | default:'مهدی' }}</span> هستم 👋</h1>
             <p>{{ my_user.short_information }}</p>
             <div class="st-hero-social-links">
                 {% for s_media in my_user.social_medias.all %}
