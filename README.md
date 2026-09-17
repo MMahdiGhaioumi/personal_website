@@ -18,6 +18,9 @@ A personal website built with Django to present personal information, skills, se
   <a href="https://github.com/unfoldadmin/django-unfold">
     <img src="https://img.shields.io/badge/Unfold-111827?style=flat&logo=django&logoColor=FFFFFF&labelColor=1F2937" alt="Django Unfold">
   </a>
+</p>
+
+<p align="center">
   <a href="https://pypi.org/project/django-cleanup/">
     <img src="https://img.shields.io/badge/django--cleanup-16A34A?style=flat&logo=python&logoColor=FFFFFF&labelColor=15803D" alt="django-cleanup">
   </a>
