@@ -19,9 +19,6 @@ services:
     networks:
       - site-network
 
-    volumes:
-      - .:/app
-
 
   db:
     image: mysql:9.7.2
