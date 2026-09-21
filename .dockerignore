@@ -1,0 +1,45 @@
+# Git
+.git
+.gitignore
+
+# Environment
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local database
+*.sqlite3
+
+# User uploaded files
+media/
+
+# Documentation
+docs/
+
+LICENSE
+README.md
