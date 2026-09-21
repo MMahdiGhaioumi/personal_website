@@ -1,0 +1,69 @@
+services:
+
+  web:
+    build:
+      context: .
+
+    container_name: personal-website
+
+    env_file:
+      - .env
+
+    ports:
+      - "8000:8000"
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    networks:
+      - site-network
+
+    volumes:
+      - .:/app
+
+
+  db:
+    image: mysql:9.7.2
+
+    container_name: mysql-personal-site
+
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "root",
+          "-p${MYSQL_ROOT_PASSWORD}"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+    networks:
+      - site-network
+    
+    ports:
+      - "3306:3306"
+
+
+volumes:
+  mysql-data:
+
+
+networks:
+  site-network:
